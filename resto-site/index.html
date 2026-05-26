@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Aurore — Restaurant Gastronomique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">Maison Aurore</div>
+    <ul class="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-reservation" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Réserver</button>
+    <button class="burger" aria-label="Menu" onclick="toggleMenu()">&#9776;</button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="accueil" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Restaurant Gastronomique · Rennes</p>
+      <h1 class="hero-title">L'art de<br><em>sublimer</em><br>le goût</h1>
+      <p class="hero-sub">Une cuisine française contemporaine ancrée dans les produits du terroir breton, revisitée avec audace et précision.</p>
+      <div class="hero-cta">
+        <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Découvrir le menu</button>
+        <button class="outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Réserver une table</button>
+      </div>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <span class="label">Notre histoire</span>
+        <h2>Une table d'exception au cœur de Rennes</h2>
+        <p>Fondée en 2018 par la cheffe Aurore Lefèvre, Maison Aurore incarne une vision : celle d'une gastronomie généreuse, ancrée dans les produits locaux et les saisons. Chaque assiette est pensée comme une œuvre éphémère.</p>
+        <p>Le restaurant accueille jusqu'à 32 convives dans un cadre sobre et chaleureux, où la pierre apparente dialogue avec le bois blond et la lumière tamisée des chandelles.</p>
+        <div class="intro-stats">
+          <div><strong>32</strong><span>couverts</span></div>
+          <div><strong>6</strong><span>ans d'existence</span></div>
+          <div><strong>100%</strong><span>produits locaux</span></div>
+        </div>
+      </div>
+      <div class="intro-img">
+        <div class="img-placeholder chef">
+          <span>Cheffe Aurore Lefèvre</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="menu">
+    <div class="section-header">
+      <span class="label">Carte du moment</span>
+      <h2>Menu de saison</h2>
+      <p class="section-sub">Notre menu évolue au fil des saisons et des arrivages. Tous les produits sont sourcés auprès de producteurs bretons.</p>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="tab active" onclick="showTab('entrees', this)">Entrées</button>
+      <button class="tab" onclick="showTab('plats', this)">Plats</button>
+      <button class="tab" onclick="showTab('desserts', this)">Desserts</button>
+      <button class="tab" onclick="showTab('vins', this)">Vins</button>
+    </div>
+
+    <div id="entrees" class="menu-grid active">
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Tartare de Saint-Jacques</h3>
+          <span class="price">18 €</span>
+        </div>
+        <p>Coquilles Saint-Jacques de la baie de Saint-Brieuc, pomme verte, gingembre confit, huile de noisette toastée</p>
+        <span class="tag">Signature</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Velouté de topinambour</h3>
+          <span class="price">14 €</span>
+        </div>
+        <p>Topinambour rôti, truffe noire d'été, mousse de lait fumé, chips de betterave dorée</p>
+        <span class="tag">Végétarien</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Foie gras mi-cuit maison</h3>
+          <span class="price">22 €</span>
+        </div>
+        <p>Foie gras des Landes, brioche toastée au beurre, chutney de figues et poivre long de Java</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Salade de homard bleu</h3>
+          <span class="price">26 €</span>
+        </div>
+        <p>Homard breton poché au beurre, roquette sauvage, vinaigrette à l'estragon, œufs de truite</p>
+        <span class="tag">Signature</span>
+      </div>
+    </div>
+
+    <div id="plats" class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Filet de sole meunière</h3>
+          <span class="price">32 €</span>
+        </div>
+        <p>Sole de ligne, beurre noisette aux câpres, gnocchi de pomme de terre fumée, fenouil braisé</p>
+        <span class="tag">Signature</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Côte de veau fermier</h3>
+          <span class="price">38 €</span>
+        </div>
+        <p>Veau de la ferme Guivarc'h, jus corsé à la morille, purée au beurre demi-sel, asperges vertes</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Risotto de cèpes sauvages</h3>
+          <span class="price">28 €</span>
+        </div>
+        <p>Cèpes de Bretagne, riz Carnaroli, parmesan 24 mois, huile de truffe blanche, herbes du jardin</p>
+        <span class="tag">Végétarien</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Turbot sauvage rôti</h3>
+          <span class="price">42 €</span>
+        </div>
+        <p>Turbot entier de Bretagne, beurre blanc au muscadet, petits légumes glacés, caviar d'Aquitaine</p>
+        <span class="tag">Chef</span>
+      </div>
+    </div>
+
+    <div id="desserts" class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Kouign-amann revisité</h3>
+          <span class="price">12 €</span>
+        </div>
+        <p>Kouign-amann tiède, glace caramel beurre salé, éclats de crêpe dentelle, fleur de sel de Guérande</p>
+        <span class="tag">Signature</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Tarte au citron déstructurée</h3>
+          <span class="price">11 €</span>
+        </div>
+        <p>Crémeux citron de Menton, meringue italienne soufflée, sablé breton, sorbet basilic</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Soufflé chaud au chocolat</h3>
+          <span class="price">14 €</span>
+        </div>
+        <p>Chocolat Valrhona 70%, cœur coulant praliné noisette, glace vanille de Madagascar</p>
+        <span class="tag">À commander à l'avance</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Assiette de fromages affinés</h3>
+          <span class="price">16 €</span>
+        </div>
+        <p>Sélection de fromages bretons et normands, confiture de poire, noix de Grenoble, pain aux raisins</p>
+      </div>
+    </div>
+
+    <div id="vins" class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Muscadet Sèvre et Maine</h3>
+          <span class="price">28 €</span>
+        </div>
+        <p>Domaine de la Louvetrie · Blanc sec · Notes minérales et florales, accord parfait avec les fruits de mer</p>
+        <span class="tag">Coup de cœur</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Bourgogne Pinot Noir</h3>
+          <span class="price">45 €</span>
+        </div>
+        <p>Domaine Rossignol-Trapet · Rouge élégant · Cerise, sous-bois, épices douces · Millésime 2020</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Champagne Blanc de Blancs</h3>
+          <span class="price">68 €</span>
+        </div>
+        <p>Maison Lallier · Brut · Chardonnay pur, bulles fines, fraîcheur citronnée · Idéal à l'apéritif</p>
+        <span class="tag">Prestige</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top">
+          <h3>Sancerre Rouge</h3>
+          <span class="price">52 €</span>
+        </div>
+        <p>Henri Bourgeois · Pinot noir de la Loire · Fruits rouges, minéralité, tanins soyeux · 2021</p>
+      </div>
+    </div>
+
+    <div class="menu-formule">
+      <h3>Formule déjeuner — 35 €</h3>
+      <p>Entrée + Plat + Dessert · Du mardi au vendredi midi · Produits du marché</p>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie" class="galerie">
+    <div class="section-header light">
+      <span class="label">L'ambiance</span>
+      <h2>La salle & les assiettes</h2>
+    </div>
+    <div class="galerie-grid">
+      <div class="galerie-item large" style="background:#2c1810;">
+        <div class="galerie-overlay"><span>Le homard bleu</span></div>
+      </div>
+      <div class="galerie-item" style="background:#3d2b1f;">
+        <div class="galerie-overlay"><span>La salle principale</span></div>
+      </div>
+      <div class="galerie-item" style="background:#1a2c1e;">
+        <div class="galerie-overlay"><span>Le jardin des herbes</span></div>
+      </div>
+      <div class="galerie-item" style="background:#2a1f0e;">
+        <div class="galerie-overlay"><span>Le kouign-amann</span></div>
+      </div>
+      <div class="galerie-item large" style="background:#0f1a2c;">
+        <div class="galerie-overlay"><span>La cave à vins</span></div>
+      </div>
+      <div class="galerie-item" style="background:#2c2010;">
+        <div class="galerie-overlay"><span>Le bar à cocktails</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="label">Nous trouver</span>
+        <h2>Réservations & Infos</h2>
+        <div class="info-block">
+          <h4>Adresse</h4>
+          <p>12, rue Saint-Malo<br>35000 Rennes, France</p>
+        </div>
+        <div class="info-block">
+          <h4>Horaires</h4>
+          <p>Mar – Sam : 12h – 14h30 · 19h – 22h30<br>Dimanche & Lundi : fermé</p>
+        </div>
+        <div class="info-block">
+          <h4>Contact</h4>
+          <p>+33 2 99 XX XX XX<br>contact@maisonaurore.fr</p>
+        </div>
+        <div class="info-block">
+          <h4>Accès</h4>
+          <p>Métro ligne A — Saint-Anne<br>Parking Hoche à 200m</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Réserver une table</h3>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" placeholder="Votre prénom" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" placeholder="votre@email.fr" required>
+            </div>
+            <div class="form-group">
+              <label for="tel">Téléphone</label>
+              <input type="tel" id="tel" placeholder="06 XX XX XX XX">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Date souhaitée *</label>
+              <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+              <label for="heure">Service *</label>
+              <select id="heure" required>
+                <option value="">Choisir</option>
+                <option value="dejeuner">Déjeuner (12h – 14h30)</option>
+                <option value="diner">Dîner (19h – 22h30)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="couverts">Nombre de couverts *</label>
+            <select id="couverts" required>
+              <option value="">Choisir</option>
+              <option>1 personne</option>
+              <option>2 personnes</option>
+              <option>3 personnes</option>
+              <option>4 personnes</option>
+              <option>5 – 6 personnes</option>
+              <option>7 – 10 personnes</option>
+              <option>Privatisation (+ 10)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Remarques / Allergies</label>
+            <textarea id="message" rows="3" placeholder="Allergies, occasions spéciales, demandes particulières…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Confirmer la réservation</button>
+          <div id="form-success" class="form-success" style="display:none">
+            ✓ Votre réservation a bien été reçue. Nous vous confirmerons par email dans les 24h.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Maison Aurore</div>
+        <p>Restaurant gastronomique · Rennes<br>Cuisine française contemporaine</p>
+      </div>
+      <div class="footer-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#menu">Menu</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <p>Suivez-nous</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="TripAdvisor">TA</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Maison Aurore — Site réalisé par Cirine Benkhelil</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
